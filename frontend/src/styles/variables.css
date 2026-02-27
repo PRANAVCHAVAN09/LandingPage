@@ -1,0 +1,33 @@
+:root {
+
+  /* Brand Colors */
+  --color-primary: #0634FF;
+  --color-accent: #FF9DDE;
+
+  /* Text Colors */
+  --color-text-main: #1E1C24;
+  --color-text-secondary: #B1AAAA;
+
+  /* Backgrounds */
+  --color-bg-main: #FFFFFF;
+  --color-bg-section: #EBEBEB;
+  --color-bg-soft-blue: #0634FF57;
+
+  /* Borders & UI */
+  --color-border: #E6E6E6;
+
+  /* Effects */
+  --color-shadow: #00000029;
+  --color-overlay: #1E1C24D9;
+  --color-teal: #2BB5A2DB;
+
+
+
+  /* Spacing system */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 64px;
+  --section-padding: 100px;
+}

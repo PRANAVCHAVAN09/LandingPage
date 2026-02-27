@@ -1,0 +1,11 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--color-bg-main);
+  color: var(--color-text-main);
+
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 600;
+}

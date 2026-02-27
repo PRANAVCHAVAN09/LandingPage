@@ -1,0 +1,20 @@
+@keyframes growIn {
+  0% {
+    transform: translateX(900px) scale(0.3);
+    opacity: 0;
+  }
+
+  60% {
+    transform: translateX(-40px) scale(1.05);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.circle-blue { animation-delay: 0.2s; }
+.circle-yellow { animation-delay: 0.5s; }
+.circle-dark { animation-delay: 0.8s; }
