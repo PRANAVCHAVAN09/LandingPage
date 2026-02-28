@@ -3,7 +3,6 @@ import Hero from "./components/Hero/Hero";
 import Benefits from "./components/Benefits/Benefits";
 import Why from "./components/Why/Why";
 import Signup from "./components/Signup/Signup";
-import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -13,7 +12,6 @@ function App() {
       <Benefits />
       <Why />
       <Signup />
-      <Footer />
     </>
   );
 }

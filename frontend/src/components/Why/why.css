@@ -1,0 +1,144 @@
+ .why {
+  background-color: var(--color-bg-main);
+  position: relative;
+  overflow: hidden;
+}
+
+.why-ring {
+  position: absolute;
+  left: -46vw;
+  top: 6%;
+  width: 70vw;
+  max-width: none;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.why-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 90px);
+  align-items: center;
+}
+
+.why-visual {
+  position: relative;
+  min-height: 420px;
+}
+
+.why-yellow {
+  position: absolute;
+  left: -6%;
+  top: 8%;
+  width: 52%;
+  height: 62%;
+  background: #ffb800;
+  border-radius: 0 0 260px 0;
+  z-index: 0;
+}
+
+.why-card {
+  position: absolute;
+  z-index: 1;
+  max-width: none;
+  filter: drop-shadow(0 35px 70px rgba(0, 0, 0, 0.18));
+}
+
+.why-card-stats {
+  width: min(520px, 90%);
+  top: 0;
+  left: 8%;
+}
+
+.why-card-earners {
+  width: min(310px, 58%);
+  top: 34%;
+  left: 32%;
+}
+
+.why-copy {
+  max-width: 460px;
+}
+
+.why-title {
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+.why-description {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.why-cta {
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.why-cta span {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.why-cta img {
+  width: 26px;
+  height: 12px;
+}
+
+@media (max-width: 900px) {
+  .why-ring {
+    display: none;
+  }
+
+  .why-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .why-copy {
+    max-width: none;
+  }
+
+  .why-visual {
+    min-height: 420px;
+    order: -1;
+  }
+
+  .why-card-stats {
+    left: 0;
+    width: min(560px, 100%);
+  }
+
+  .why-card-earners {
+    left: 18%;
+  }
+}
+
+@media (max-width: 520px) {
+  .why-visual {
+    min-height: 360px;
+  }
+
+  .why-yellow {
+    width: 64%;
+  }
+
+  .why-card-earners {
+    width: min(280px, 70%);
+    left: 16%;
+  }
+}
+
