@@ -66,6 +66,7 @@ LandingPage/
 ├── backend/
 │   ├── src/
 │   │   ├── models/
+|   |   ├── utils/
 │   │   ├── routes/
 │   │   └── config/
 │   └── server.js
@@ -185,8 +186,3 @@ http://localhost:5173
 
 **Pranav Chavan**
 
----
-
-## License
-
-This project is for learning and assessment purposes.
