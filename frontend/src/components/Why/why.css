@@ -32,7 +32,6 @@
   overflow: visible;
 }
 
-/* Yellow splash shape from top-left (reference) */
 .why-yellow {
   position: absolute;
   left: 0;
@@ -44,7 +43,6 @@
   z-index: 0;
 }
 
-/* Dark grey C-shaped / circular accent (reference) */
 .why-dark-shape {
   position: absolute;
   left: 8%;

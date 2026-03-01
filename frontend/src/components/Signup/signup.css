@@ -37,7 +37,7 @@
 @media (max-width: 600px){
 
   .signup-shape{
-    opacity: 0.18;            /* soft background */
+    opacity: 0.18;           
   }
 
 }
@@ -91,6 +91,21 @@
   font-size: 0.95rem;
   cursor: pointer;
   white-space: nowrap;
+}
+
+.form-error{
+  color:#ff3b3b;
+  margin-top:12px;
+  font-size:0.9rem;
+  text-align:center;
+}
+
+.form-success{
+  color:#1bbf73;
+  margin-top:12px;
+  font-size:0.95rem;
+  text-align:center;
+  font-weight:500;
 }
 
 @media (max-width: 800px) {

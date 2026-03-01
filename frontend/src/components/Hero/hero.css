@@ -1,4 +1,4 @@
-/* ================= TOP BAR ================= */
+
 .hero .container {
   position: relative;
   z-index: 5;
@@ -32,7 +32,7 @@
   backdrop-filter: blur(10px);
 }
 
-/* ================= HERO SECTION ================= */
+
 
 .hero {
   min-height: 100vh;
@@ -138,7 +138,7 @@
   opacity: 1;
 }
 
-/* ================= VISUAL BACKGROUND ================= */
+
 
 .hero-visual {
   position: absolute;
@@ -191,7 +191,7 @@
   height: min(753px, 64vw);
   top: -13%;
   right: -20%;
-  background: #0b1022;
+  background: #343A46;
   z-index: 4;
   animation-delay: 1s;
 }
@@ -210,7 +210,6 @@
   }
 }
 
-/* ================= HERO CARDS ================= */
 
 @keyframes cardBurstIn {
   0% { transform: scale(0.4); opacity: 0; }
@@ -296,7 +295,46 @@
     cardFloat 4.4s ease-in-out 1.05s infinite;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ===== 1024x600 SMALL LAPTOP FIX ===== */
+@media (max-width: 1100px) and (max-height: 700px) {
+
+  .hero-right {
+    height: 520px;
+  }
+
+  /* card 1 — remove left and reposition */
+  .hero-card-1 {
+    left: auto;
+    right: 22%;
+    top: -4%;
+    max-width: 420px;
+  }
+
+  /* card 2 */
+  .hero-card-2 {
+    left: -35%;
+    top: 18%;
+    max-width: 560px;
+  }
+
+  /* card 3 */
+  .hero-card-3 {
+    left: -25%;
+    bottom: -6%;
+    max-width: 500px;
+  }
+
+  /* card 4 */
+  .hero-card-4 {
+    right: -6%;
+    top: 38%;
+    max-width: 320px;
+  }
+
+}
+
+
+
 
 @media (max-width: 1200px) {
   .hero-circle-blue {
@@ -369,7 +407,7 @@
   .hero-description {
     font-size: 0.95rem;
     margin-bottom: 20px;
-    /* Ensure text is always readable above circles */
+   
     position: relative;
     z-index: 5;
   }
@@ -384,7 +422,6 @@
     height: 28px;
   }
 
-  /* FIX: was incorrectly set to opacity: 2.0 (same as 1 = fully opaque) */
   .hero-circle-blue {
     width: min(400px, 90vw);
     height: min(360px, 81vw);

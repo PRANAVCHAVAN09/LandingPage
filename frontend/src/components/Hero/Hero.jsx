@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState}from "react";
 import Card1 from "../../assets/Hero/Hero_Illustration_Card-1.svg";
 import Card2 from "../../assets/Hero/Hero_Illustration_Card-2.svg";
 import Card3 from "../../assets/Hero/Hero_Illustration_Card-3.svg";
@@ -12,9 +12,20 @@ import LogoNetflix from "../../assets/Logos/Netflix_logo.svg";
 import LogoSpotify from "../../assets/Logos/Spotify_logo.svg";
 import LogoCocaCola from "../../assets/Logos/CocaCola_logo.svg";
 import LogoRedBull from "../../assets/Logos/RedBull_logo.svg";
+import useSignup from "../../hooks/useSignup";
+
 import "./hero.css";
+import "../Signup/Signup"
 
 const Hero = () => {
+  const { signup, loading, error, success } = useSignup();
+  const [email, setEmail] = useState("");
+
+  const handleHeroSubmit = async (e) => {
+    e.preventDefault();
+    const ok = await signup(email);
+    if (ok) setEmail("");
+  };
   return (
     <section className="hero">
       <div className="hero-visual">
@@ -45,19 +56,21 @@ const Hero = () => {
               injected humour.
             </p>
 
-            <form
-              className="hero-form"
-              onSubmit={(event) => event.preventDefault()}
-            >
+            <form className="hero-form" onSubmit={handleHeroSubmit}>
               <input
                 className="hero-input"
                 type="email"
-                placeholder="Name@company.com"
+                placeholder="name@company.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
-              <button type="submit" className="hero-btn">
-                Try for free
+
+              <button type="submit" className="hero-btn" disabled={loading}>
+                {loading ? "Sending..." : "Try for free"}
               </button>
             </form>
+            {error && <p className="form-error">{error}</p>}
+{success && <p className="form-success">{success}</p>}
 
             <div className="hero-logos" aria-label="Trusted by">
               <img src={LogoCartoon} alt="Cartoon Network" />

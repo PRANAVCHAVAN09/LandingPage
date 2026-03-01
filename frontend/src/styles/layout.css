@@ -18,7 +18,6 @@
   padding-bottom: var(--section-padding);
 }
 
-/* ===== SHARED SECTION STRUCTURE ===== */
 
 .section-header {
   max-width: 600px;
@@ -46,7 +45,6 @@
   line-height: 1.7;
 }
 
-/* ===== UTILITIES ===== */
 
 .badge {
   display: inline-flex;
