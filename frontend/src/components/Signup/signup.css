@@ -23,12 +23,30 @@
   height: 100%;
   width: auto;
   pointer-events: none;
+     transform: scaleX(-1);
+    opacity: 0.35;      
+
+}
+
+@media (max-width: 900px){
+  .signup-shape{
+    opacity: 0.25;
+  }
+}
+
+@media (max-width: 600px){
+
+  .signup-shape{
+    opacity: 0.18;            /* soft background */
+  }
+
 }
 
 .signup-inner {
   position: relative;
   z-index: 1;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
@@ -37,6 +55,7 @@
 
 .signup-copy {
   text-align: center;
+    max-width: 560px;
 }
 
 .signup-form {

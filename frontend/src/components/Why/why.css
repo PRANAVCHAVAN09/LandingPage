@@ -8,12 +8,13 @@
 
 .why-ring {
   position: absolute;
-  left: -46vw;
-  top: 6%;
-  width: 70vw;
+  left: -22vw;
+  top: 10%;
+  width: 50vw;
   max-width: none;
   z-index: 0;
   pointer-events: none;
+   transform: scaleX(-1);
 }
 
 .why-layout {

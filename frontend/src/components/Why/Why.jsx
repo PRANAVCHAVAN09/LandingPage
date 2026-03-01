@@ -2,24 +2,20 @@ import WhyRing from "../../assets/Why/Why_Shapes_Ellipse.svg";
 import WhyStatsCard from "../../assets/Why/Why_Illustration.svg";
 import WhyEarnersCard from "../../assets/Why/Why_Illustration-1.svg";
 import ArrowIcon from "../../assets/Why/Arrow_icon.svg";
+import WhyLayoutshape from "../../assets/Why/Why_Shapes.svg"
 import "./why.css";
 
 const Why = () => {
   return (
     <section className="section why">
-      <img src={WhyRing} alt="" className="why-ring" />
+      <img src={WhyLayoutshape} alt="" className="why-ring" />
 
       <div className="container">
         <div className="why-layout">
           <div className="why-visual">
-            <div className="why-yellow" />
-            <div className="why-dark-shape" aria-hidden="true" />
+            <div className="why-yellow1" />
+            <div className="why-dark-shape1" aria-hidden="true" />
             <img src={WhyStatsCard} alt="" className="why-card why-card-stats" />
-            <img
-              src={WhyEarnersCard}
-              alt=""
-              className="why-card why-card-earners"
-            />
           </div>
 
           <div className="why-copy">
