@@ -2,6 +2,8 @@
   background-color: var(--color-bg-main);
   position: relative;
   overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 .why-ring {
@@ -26,16 +28,32 @@
 .why-visual {
   position: relative;
   min-height: 420px;
+  overflow: visible;
 }
 
+/* Yellow splash shape from top-left (reference) */
 .why-yellow {
   position: absolute;
-  left: -6%;
-  top: 8%;
-  width: 52%;
-  height: 62%;
+  left: 0;
+  top: 0;
+  width: 58%;
+  height: 70%;
   background: #ffb800;
-  border-radius: 0 0 260px 0;
+  border-radius: 0 0 120px 0;
+  z-index: 0;
+}
+
+/* Dark grey C-shaped / circular accent (reference) */
+.why-dark-shape {
+  position: absolute;
+  left: 8%;
+  bottom: 5%;
+  width: 42%;
+  height: 50%;
+  max-width: 280px;
+  max-height: 320px;
+  background: #2d3748;
+  border-radius: 50%;
   z-index: 0;
 }
 
@@ -43,19 +61,50 @@
   position: absolute;
   z-index: 1;
   max-width: none;
-  filter: drop-shadow(0 35px 70px rgba(0, 0, 0, 0.18));
+  filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.12));
+  transform-origin: center;
 }
 
 .why-card-stats {
   width: min(520px, 90%);
   top: 0;
-  left: 8%;
+  left: 4%;
+  opacity: 0;
+  animation: whyCardBurst 0.6s cubic-bezier(0.34, 1.2, 0.64, 1) 0.2s forwards,
+    whyCardFloat 4.5s ease-in-out 0.9s infinite;
 }
 
 .why-card-earners {
-  width: min(310px, 58%);
-  top: 34%;
-  left: 32%;
+  width: min(340px, 62%);
+  top: 36%;
+  left: 24%;
+  opacity: 0;
+  animation: whyCardBurst 0.6s cubic-bezier(0.34, 1.2, 0.64, 1) 0.4s forwards,
+    whyCardFloat 4.2s ease-in-out 1.1s infinite;
+}
+
+@keyframes whyCardBurst {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes whyCardFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .why-copy {
@@ -80,23 +129,30 @@
   margin-top: 20px;
   display: inline-flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   border: none;
   background: none;
   padding: 0;
   cursor: pointer;
+  color: var(--color-primary);
+  transition: opacity 0.2s ease;
+}
+
+.why-cta:hover {
+  opacity: 0.85;
 }
 
 .why-cta span {
   font-size: 0.78rem;
   letter-spacing: 0.14em;
   font-weight: 600;
-  color: var(--color-text-main);
+  color: inherit;
 }
 
 .why-cta img {
   width: 26px;
   height: 12px;
+  flex-shrink: 0;
 }
 
 @media (max-width: 900px) {
@@ -117,6 +173,18 @@
     order: -1;
   }
 
+  .why-yellow {
+    width: 55%;
+    height: 65%;
+  }
+
+  .why-dark-shape {
+    width: 38%;
+    height: 45%;
+    left: 6%;
+    bottom: 8%;
+  }
+
   .why-card-stats {
     left: 0;
     width: min(560px, 100%);
@@ -124,6 +192,7 @@
 
   .why-card-earners {
     left: 18%;
+    width: min(320px, 65%);
   }
 }
 
@@ -133,12 +202,20 @@
   }
 
   .why-yellow {
-    width: 64%;
+    width: 60%;
+    height: 60%;
+  }
+
+  .why-dark-shape {
+    width: 35%;
+    height: 40%;
+    left: 4%;
+    bottom: 12%;
   }
 
   .why-card-earners {
-    width: min(280px, 70%);
-    left: 16%;
+    width: min(280px, 72%);
+    left: 14%;
   }
 }
 

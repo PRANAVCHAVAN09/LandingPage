@@ -13,6 +13,7 @@ const Why = () => {
         <div className="why-layout">
           <div className="why-visual">
             <div className="why-yellow" />
+            <div className="why-dark-shape" aria-hidden="true" />
             <img src={WhyStatsCard} alt="" className="why-card why-card-stats" />
             <img
               src={WhyEarnersCard}

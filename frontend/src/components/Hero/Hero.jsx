@@ -1,5 +1,4 @@
 import React from "react";
-import HeroShapes from "../../assets/Hero/Hero_Shapes.svg";
 import Card1 from "../../assets/Hero/Hero_Illustration_Card-1.svg";
 import Card2 from "../../assets/Hero/Hero_Illustration_Card-2.svg";
 import Card3 from "../../assets/Hero/Hero_Illustration_Card-3.svg";
@@ -19,7 +18,9 @@ const Hero = () => {
   return (
     <section className="hero">
       <div className="hero-visual">
-        <img src={HeroShapes} alt="" className="hero-shapes" />
+        <div className="hero-circle hero-circle-blue" />
+        <div className="hero-circle hero-circle-yellow" />
+        <div className="hero-circle hero-circle-gray" />
       </div>
 
       <div className="container">
@@ -58,7 +59,7 @@ const Hero = () => {
               </button>
             </form>
 
-            <div className="hero-logos">
+            <div className="hero-logos" aria-label="Trusted by">
               <img src={LogoCartoon} alt="Cartoon Network" />
               <img src={LogoBooking} alt="Booking.com" />
               <img src={LogoDropbox} alt="Dropbox" />
@@ -67,7 +68,7 @@ const Hero = () => {
               <img src={LogoNetflix} alt="Netflix" />
               <img src={LogoSpotify} alt="Spotify" />
               <img src={LogoCocaCola} alt="Coca-Cola" />
-              <img src={LogoRedBull} alt="Red Bull" />
+              <img src={LogoRedBull} alt="Red Bull" className="hero-logo-color" />
             </div>
           </div>
 

@@ -6,6 +6,13 @@
   padding-right: var(--space-md);
 }
 
+@media (max-width: 640px) {
+  .container {
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+  }
+}
+
 .section {
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);

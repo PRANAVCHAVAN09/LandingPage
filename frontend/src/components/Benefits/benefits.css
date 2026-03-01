@@ -1,5 +1,7 @@
  .benefits {
   background-color: var(--color-bg-main);
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .benefits-header {
@@ -31,9 +33,9 @@
 }
 
 .benefit-icon {
-  width: 32px;
-  height: 32px;
-  margin-bottom: 12px;
+  width: 100px;
+  height: 100px;
+
 }
 
 .benefit-title {
