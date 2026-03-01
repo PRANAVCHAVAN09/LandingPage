@@ -6,6 +6,7 @@ import "./styles/layout.css";
 import "./styles/animations.css";
 import App from './App';
 
+history.scrollRestoration = 'manual';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

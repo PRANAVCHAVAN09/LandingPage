@@ -1,9 +1,41 @@
+import { useEffect, useRef } from "react";
 import TrackIcon from "../../assets/Benefits/Benefits_Icon_Track.svg";
 import PrioritizeIcon from "../../assets/Benefits/Benefits_Icon_Priotitize.svg";
 import CollaborateIcon from "../../assets/Benefits/Benefits_Icon_Collaborate.svg";
 import "./benefits.css";
 
 const Benefits = () => {
+  const gridRef = useRef(null);
+
+  useEffect(() => {
+    const cards = gridRef.current?.querySelectorAll(".benefit-card");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Add visible class to each card with its staggered delay
+            cards.forEach((card, index) => {
+              setTimeout(() => {
+                card.classList.add("benefit-card--visible");
+              }, index * 150); // 150ms stagger between each card
+            });
+            observer.disconnect(); // Animate only once
+          }
+        });
+      },
+      {
+        threshold: 0.2, // Trigger when 20% of the grid is visible
+      }
+    );
+
+    if (gridRef.current) {
+      observer.observe(gridRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="section benefits">
       <div className="container">
@@ -15,7 +47,7 @@ const Benefits = () => {
           </h2>
         </header>
 
-        <div className="benefits-grid">
+        <div className="benefits-grid" ref={gridRef}>
           <article className="benefit-card">
             <img
               src={TrackIcon}

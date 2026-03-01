@@ -1,4 +1,4 @@
- .signup {
+.signup {
   position: relative;
   padding: 70px 0;
   background-color: #ffffff;
@@ -16,6 +16,7 @@
   pointer-events: none;
 }
 
+/* ── Triangle shape — fans in + slides from right ── */
 .signup-shape {
   position: absolute;
   right: 0;
@@ -23,25 +24,49 @@
   height: 100%;
   width: auto;
   pointer-events: none;
-     transform: scaleX(-1);
-    opacity: 0.35;      
 
+  /* Start: off-screen right, rotated (fanned out), invisible */
+  transform: scaleX(-1) translateX(-120%) rotate(-35deg);
+  opacity: 0;
+  transform-origin: right center;
+
+  transition:
+    transform 0.9s cubic-bezier(0.34, 1.1, 0.64, 1),
+    opacity 0.7s ease;
 }
 
-@media (max-width: 900px){
-  .signup-shape{
+/* Triggered by JS — fans and slides into final position */
+.signup-shape--visible {
+  /* scaleX(-1) is the original flip, translateX(0) + rotate(0) = resting position */
+  transform: scaleX(-1) translateX(0) rotate(0deg);
+  opacity: 0.35;
+}
+
+@media (max-width: 900px) {
+  .signup-shape--visible {
     opacity: 0.25;
   }
 }
 
-@media (max-width: 600px){
-
-  .signup-shape{
-    opacity: 0.18;           
+@media (max-width: 600px) {
+  .signup-shape--visible {
+    opacity: 0.18;
   }
-
 }
 
+/* ── Fade reveal items ── */
+.signup-fade-item {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.signup-fade-item--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Layout ── */
 .signup-inner {
   position: relative;
   z-index: 1;
@@ -55,7 +80,7 @@
 
 .signup-copy {
   text-align: center;
-    max-width: 560px;
+  max-width: 560px;
 }
 
 .signup-form {
@@ -93,19 +118,19 @@
   white-space: nowrap;
 }
 
-.form-error{
-  color:#ff3b3b;
-  margin-top:12px;
-  font-size:0.9rem;
-  text-align:center;
+.form-error {
+  color: #ff3b3b;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
-.form-success{
-  color:#1bbf73;
-  margin-top:12px;
-  font-size:0.95rem;
-  text-align:center;
-  font-weight:500;
+.form-success {
+  color: #1bbf73;
+  margin-top: 12px;
+  font-size: 0.95rem;
+  text-align: center;
+  font-weight: 500;
 }
 
 @media (max-width: 800px) {
@@ -144,4 +169,3 @@
     padding: 40px 0;
   }
 }
-
